@@ -1,0 +1,87 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.image-slider {
+    display: flex;
+    width: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    animation: fadeEffect 1s ease-in-out;
+}
+@keyframes fadeEffect{
+    from{opacity: 0.4;}
+    to {opacity: 1;}
+}
+
+button:hover{
+    transform: translateY(-50%) scale(1.2);
+    background-color: rgba(0,0,0,0.8);
+}
+
+.slide.active {
+    display: flex; 
+}
+
+img {
+    width: 120%;
+    display: block;
+}
+
+.caption {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    font-size: 30px;
+    padding: 5px;
+    text-align: center;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 100;
+}
+
+.prev {
+    left: 10px;
+    border-radius: 50%;
+}
+
+.next, .pause-play {
+    right: 10px;
+    border-radius: 50%;
+}
+
+.pause-play {
+    top: 10px;
+    right: 10px;
+    transform: translateY(0);
+}
